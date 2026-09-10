@@ -4,7 +4,7 @@ using System.Text;
 
 namespace G_ASP_NET_99_OOP_01
 {
-    public struct DeliveryAddress
+public struct DeliveryAddress
     {
         public string city;
         public string street;
@@ -12,6 +12,41 @@ namespace G_ASP_NET_99_OOP_01
     public class Customer
     {
         public string name;
-
+      
+    }
+    public struct Shipment { 
+        private string description;
+        private double weight;
+        private decimal deliveryFeee;
+        public string Description {
+            get {
+                return description;
+            }
+            set {
+                description = value;
+                } 
+         }
+        public double Weight
+        {
+            get
+            {
+                return weight;
+            }
+            set
+            {
+                weight = value>=0 ? value : 0;
+            }
+        }
+        public decimal DeliveryFee
+        {
+            get
+            {
+                return deliveryFeee;
+            }
+            set
+            {
+                deliveryFeee = value >= 0 ? value : 0;
+            }
+        }
     }
 }
