@@ -23,10 +23,10 @@
             Both 'customer1' and 'customer2' point to the exact same object in the Heap. Modifying 'customer2.name' WILL change 'customer1.name' to "Jane Smith". */
             #endregion
             #region Question2(AandB)
-            Shipment shipment = new Shipment();
-            shipment.Description = "box of books";
-            shipment.Weight = 3.5;
-            shipment.DeliveryFee = 40.0m;
+            //Shipment shipment = new Shipment();
+           // shipment.Description = "box of books";
+           // shipment.Weight = 3.5;
+            //shipment.DeliveryFee = 40.0m;
             //Console.WriteLine($"Shipment Description: {shipment.Description}");
             //Console.WriteLine($"Shipment Weight: {shipment.Weight}");
             //Console.WriteLine($"Shipment Delivery Fee: {shipment.DeliveryFee}");
@@ -49,6 +49,18 @@
             address2.BuildingNumber = 456;
             Console.WriteLine("Original Address: " + address1.GetFullAddress());
             Console.WriteLine("Modified Address: " + address2.GetFullAddress());
+
+            #endregion 2.Ceate a Shipment struct
+            Shipment shipment = new Shipment("TRK-9900", "Laptops", 3.0, 50.0, address1);
+
+            Console.WriteLine("Tracking Code: " + shipment.TrackingCode);
+            Console.WriteLine("Description: " + shipment.Description);
+            Console.WriteLine("Weight: " + shipment.Weight);
+            Console.WriteLine("Delivery Fee: " + shipment.DeliveryFee);
+            Console.WriteLine("Estimated Cost: " + shipment.EstimatedCost);
+
+            #region 
+
             #endregion
             #endregion
         }
