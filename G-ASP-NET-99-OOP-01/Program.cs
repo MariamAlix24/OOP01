@@ -39,7 +39,18 @@
              2-Public properties: Provide controlled access using getters and setters, allowing us to add validation logic to prevent invalid values (like negative numbers).*/
             #endregion
 
+            #region Part02 practical Smart Delivery System
 
+            #region 1-Create a DeliveryAddress struct with:
+            DeliveryAddress address1 = new DeliveryAddress("New York", "Main Street", 123);
+            DeliveryAddress address2 = address1; // Copying the struct
+            address2.city = "Los Angeles"; // Modifying the copy
+            address2.street = "Sunset Boulevard";
+            address2.BuildingNumber = 456;
+            Console.WriteLine("Original Address: " + address1.GetFullAddress());
+            Console.WriteLine("Modified Address: " + address2.GetFullAddress());
+            #endregion
+            #endregion
         }
     }
 }

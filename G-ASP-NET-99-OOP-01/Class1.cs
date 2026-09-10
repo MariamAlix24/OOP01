@@ -52,16 +52,24 @@ namespace G_ASP_NET_99_OOP_01
         }
     }
     #endregion
-    public struct DeliveryAddress2
+    #region 1-Create a DeliveryAddress struct with:
+    public struct DeliveryAddress
     {
-        private string city;
-        private string street;
-        private int BuildingNumber;
-        
-
+        public string city;
+        public string street;
+        public int BuildingNumber;
+        public DeliveryAddress(string city, string street, int buildingNumber)
+        {
+            this.city = city;
+            this.street = street;
+            this.BuildingNumber = buildingNumber;
+        }
+        public string GetFullAddress()
+        {
+            return $"{BuildingNumber} {street}, {city}";
+        }
     }
-
-
+    #endregion
 }
 
 
