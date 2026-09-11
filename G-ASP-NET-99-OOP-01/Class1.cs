@@ -74,16 +74,16 @@ namespace G_ASP_NET_99_OOP_01
     #region 2.Ceate a Shipment struct
     public struct Shipment
     {
-     //private fields
-     private string trackingCode;
-     private string description; 
-     private double weight;
-     private double deliveryFee;
+        //private fields
+        private string trackingCode;
+        private string description;
+        private double weight;
+        private double deliveryFee;
         //public properties
         public string TrackingCode
         {
             get { return trackingCode; }
-           private set
+            private set
             {
                 if (!string.IsNullOrWhiteSpace(value))
                 {
@@ -127,26 +127,52 @@ namespace G_ASP_NET_99_OOP_01
         }
         public DeliveryAddress Destination
         {
-            get;set;
+            get; set;
 
         }
         public double EstimatedCost
         {
             get
             {
-                  return DeliveryFee + (Weight * 5); 
-               
+                return DeliveryFee + (Weight * 5);
+
             }
         }
         //Testing the Shipment struct
-        public Shipment(string trackingCode, string description, double weight, double deliveryFee, DeliveryAddress destination)
-        {
+         public Shipment(string trackingCode, string description, double weight, double deliveryFee, DeliveryAddress destination)
+         {
+             this.trackingCode = !string.IsNullOrWhiteSpace(trackingCode) ? trackingCode : "UNKNOWN";
+             this.description = !string.IsNullOrWhiteSpace(description) ? description : "No Description";
+             this.weight = weight > 0 ? weight : 1.0;
+             this.deliveryFee = deliveryFee > 0 ? deliveryFee : 10.0;
+             this.Destination = destination;
+         }
+        #region Add constructor overloading to Shipment and Add two methods
+        public Shipment(string trackingCode){
             this.trackingCode = !string.IsNullOrWhiteSpace(trackingCode) ? trackingCode : "UNKNOWN";
-            this.description = !string.IsNullOrWhiteSpace(description) ? description : "No Description";
-            this.weight = weight > 0 ? weight : 1.0;
-            this.deliveryFee = deliveryFee > 0 ? deliveryFee : 10.0;
-            this.Destination = destination;
+            this.description = "No Description";
+            this.weight = 1.0;
+            this.deliveryFee = 10.0;
+            this.Destination = new DeliveryAddress("cairo", "Egypt",2 );
         }
+        public void UpdateDeliveryFee(double newFee)
+        {
+            if (newFee > 0)
+            {
+                DeliveryFee = newFee;
+            }
+        }
+        public void printshipment() {
+            Console.WriteLine($"Tracking Code: {TrackingCode}");
+            Console.WriteLine($"Description: {Description}");
+            Console.WriteLine($"Weight: {Weight}");
+            Console.WriteLine($"Delivery Fee: {DeliveryFee}");
+            Console.WriteLine($"Estimated Cost: {EstimatedCost}"); 
+            Console.WriteLine($"Destination: {Destination.GetFullAddress()}"); 
+        }
+
+
+        #endregion
 
     }
 

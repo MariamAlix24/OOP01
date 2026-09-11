@@ -51,15 +51,21 @@
             Console.WriteLine("Modified Address: " + address2.GetFullAddress());
 
             #endregion 2.Ceate a Shipment struct
-            Shipment shipment = new Shipment("TRK-9900", "Laptops", 3.0, 50.0, address1);
+            /* Shipment shipment = new Shipment("TRK-9900", "Laptops", 3.0, 50.0, address1);
 
-            Console.WriteLine("Tracking Code: " + shipment.TrackingCode);
-            Console.WriteLine("Description: " + shipment.Description);
-            Console.WriteLine("Weight: " + shipment.Weight);
-            Console.WriteLine("Delivery Fee: " + shipment.DeliveryFee);
-            Console.WriteLine("Estimated Cost: " + shipment.EstimatedCost);
+             Console.WriteLine("Tracking Code: " + shipment.TrackingCode);
+             Console.WriteLine("Description: " + shipment.Description);
+             Console.WriteLine("Weight: " + shipment.Weight);
+             Console.WriteLine("Delivery Fee: " + shipment.DeliveryFee);
+             Console.WriteLine("Estimated Cost: " + shipment.EstimatedCost);*/
 
             #region 
+            #region Add constructor overloading to Shipment:
+            
+
+
+
+            #endregion
 
             #endregion
             #endregion
